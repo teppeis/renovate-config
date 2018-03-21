@@ -4,6 +4,8 @@
 My [shareable config](https://renovateapp.com/docs/configuration-reference/config-presets) for [Renovate](https://renovateapp.com)
 
 [![npm version][npm-image]][npm-url]
+[![build status][circleci-image]][circleci-url]
+[![dependency status][deps-image]][deps-url]
 ![License][license]
 
 ## Setup
