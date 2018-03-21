@@ -42,7 +42,7 @@
       ],
       "timezone": "Asia/Tokyo"
     },
-    "always": {
+    "anytime": {
       "extends": [
         "@teppeis"
       ],
