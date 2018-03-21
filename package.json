@@ -1,0 +1,19 @@
+{
+  "name": "renovate-config",
+  "version": "1.0.0",
+  "author": "Teppei Sato <teppeis@gmail.com>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "https://github.com/teppeis/renovate-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/teppeis/renovate-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teppeis/renovate-config/issues"
+  },
+  "keywords": [],
+  "license": "MIT"
+}
