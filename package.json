@@ -4,7 +4,10 @@
   "version": "1.0.0",
   "author": "Teppei Sato <teppeis@gmail.com>",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/validate-config.js"
+  },
+  "devDependencies": {
+    "renovate": "^11.37.19"
   },
   "homepage": "https://github.com/teppeis/renovate-config",
   "repository": {
@@ -33,7 +36,9 @@
         ":unpublishSafe"
       ],
       "upgradeInRange": true,
-      "schedule": "before 6am",
+      "schedule": [
+        "before 6am"
+      ],
       "timezone": "Asia/Tokyo"
     }
   }
