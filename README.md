@@ -65,14 +65,16 @@ and add following `renovate.json` to your repo.
 
 ### `@teppeis:anytime`
 
-- Receive updates from Renovate *at any time*.
+- Run Renovate ***at any time***
 
+```json
 {
   "extends": [
     "@teppeis"
   ],
   "schedule": []
 }
+```
 
 ## References
 
