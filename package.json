@@ -1,5 +1,5 @@
 {
-  "name": "renovate-config",
+  "name": "@teppeis/renovate-config",
   "description": "My shareable config for Renovate (renovateapp.com)",
   "version": "1.0.0",
   "author": "Teppei Sato <teppeis@gmail.com>",
