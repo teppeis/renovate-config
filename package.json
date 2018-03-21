@@ -30,7 +30,7 @@
         ":noUnscheduledUpdates",
         ":separatePatchReleases",
         ":automergePatch",
-        ":maintainLockFilesMonthly",
+        ":maintainLockFilesWeekly",
         ":prNotPending",
         ":preserveSemverRanges",
         ":unpublishSafe"

@@ -10,22 +10,23 @@ My [shareable config](https://renovateapp.com/docs/configuration-reference/confi
 
 ## Setup
 
-Enable Renovate in your repo and just specify this in `renovate.json`.
+Enable Renovate in your repo and just `extends` in `renovate.json`.
 
 ```json
 {
-  "extends": ["@teppeis"]
+  "extends": ["@teppeis"] // or ["@teppeis:anytime"]
 }
 ```
 
-You don't have to do `npm i -D @teppeis/renovate-config`. Renovate fetches it from npm registry automatically.
+Note: You don't have to do `npm i -D @teppeis/renovate-config`.
+Renovate fetches it from npm registry automatically.
 
 ## Presets
 
 ### `@teppeis` (default)
 
 - Run Renovate on following schedule: before 6am in Asia/Tokyo
-- Run lock file maintenance (updates) on the first day of each month
+- Run lock file maintenance (updates) early Monday mornings
 - Separate major, minor and patch releases of dependencies into individual branches/PRs
 - Automerge patch upgrades if they pass tests
 - Upgrade semver ranges to latest version even if latest version satisfies existing range.
@@ -48,7 +49,7 @@ You don't have to do `npm i -D @teppeis/renovate-config`. Renovate fetches it fr
     ":noUnscheduledUpdates",
     ":separatePatchReleases",
     ":automergePatch",
-    ":maintainLockFilesMonthly",
+    ":maintainLockFilesWeekly",
     ":prNotPending",
     ":preserveSemverRanges",
     ":unpublishSafe"
@@ -80,9 +81,7 @@ You don't have to do `npm i -D @teppeis/renovate-config`. Renovate fetches it fr
 
 ```json
 {
-  "extends": [
-    "@teppeis"
-  ],
+  "extends": ["@teppeis"],
   "schedule": []
 }
 ```
