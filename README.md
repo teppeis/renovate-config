@@ -24,7 +24,25 @@ and add following `renovate.json` to your repo.
 }
 ```
 
-## Config
+## Presets
+
+### `@teppeis` (default)
+
+- Run Renovate on following schedule: before 6am in Asia/Tokyo
+- Run lock file maintenance (updates) on the first day of each month
+- Separate major, minor and patch releases of dependencies into individual branches/PRs
+- Automerge patch upgrades if they pass tests
+- Upgrade semver ranges to latest version even if latest version satisfies existing range.
+- Upgrade to unstable versions only if the existing version is unstable
+- Wait until branch tests have passed or failed before creating the PR
+- Set a status check to warn when upgrades <  24 hours old might get unpublished
+- Make no updates to branches when not scheduled
+- Limit to maximum 20 concurrent Renovate PRs at any time
+- Group monorepo packages together
+- Disable major upgrade of `@types/node`
+- Use `renovate/` as prefix for all branch names
+- If semantic commits detected, use semantic commit type `fix` for dependencies and `chore` for all others
+- Ignore `node_modules`, `bower_components`, and various test/tests directories
 
 ```json
 {
@@ -34,16 +52,27 @@ and add following `renovate.json` to your repo.
     ":separatePatchReleases",
     ":automergePatch",
     ":maintainLockFilesMonthly",
-    ":prConcurrentLimit10",
     ":prNotPending",
     ":preserveSemverRanges",
     ":unpublishSafe"
   ],
   "upgradeInRange": true,
+  "prHourlyLimit": 0,
   "schedule": ["before 6am"],
   "timezone": "Asia/Tokyo"
 }
 ```
+
+### `@teppeis:anytime`
+
+- Receive updates from Renovate *at any time*.
+
+{
+  "extends": [
+    "@teppeis"
+  ],
+  "schedule": []
+}
 
 ## References
 
