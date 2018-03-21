@@ -40,7 +40,7 @@ and add following `renovate.json` to your repo.
     ":unpublishSafe"
   ],
   "upgradeInRange": true,
-  "schedule": "before 6am",
+  "schedule": ["before 6am"],
   "timezone": "Asia/Tokyo"
 }
 ```
