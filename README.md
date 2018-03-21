@@ -1,12 +1,9 @@
 @teppeis/renovate-config
 ====
 
-My shareable config for [Renovate](https://renovateapp.com)
+My [shareable config](https://renovateapp.com/docs/configuration-reference/config-presets) for [Renovate](https://renovateapp.com)
 
 [![npm version][npm-image]][npm-url]
-![Node.js Version Support][node-version]
-[![build status][circleci-image]][circleci-url]
-[![dependency status][deps-image]][deps-url]
 ![License][license]
 
 ## Setup
@@ -16,6 +13,42 @@ Install
 ```console
 $ npm install -D @teppeis/renovate-config
 ```
+
+and add following `renovate.json` to your repo.
+
+```json
+{
+  "extends": ["@teppeis"]
+}
+```
+
+## Config
+
+```json
+{
+  "extends": [
+    "config:base",
+    ":noUnscheduledUpdates",
+    ":separatePatchReleases",
+    ":automergePatch",
+    ":maintainLockFilesMonthly",
+    ":prConcurrentLimit10",
+    ":prNotPending",
+    ":preserveSemverRanges",
+    ":unpublishSafe"
+  ],
+  "upgradeInRange": true,
+  "schedule": "before 6am",
+  "timezone": "Asia/Tokyo"
+}
+```
+
+## References
+
+- [Full Config Presets \- Renovate](https://renovateapp.com/docs/config-presets/config-config)
+- [Default Presets \- Renovate](https://renovateapp.com/docs/config-presets/config-default)
+- [Configuration Options \- Renovate](https://renovateapp.com/docs/configuration-reference/configuration-options)
+- [Shareable Config Presets \- Renovate](https://renovateapp.com/docs/configuration-reference/config-presets)
 
 ## License
 
