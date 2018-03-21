@@ -3,6 +3,7 @@
   "description": "My shareable config for Renovate (renovateapp.com)",
   "version": "1.0.0",
   "author": "Teppei Sato <teppeis@gmail.com>",
+  "files": [],
   "scripts": {
     "test": "node test/validate-config.js"
   },
