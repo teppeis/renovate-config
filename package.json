@@ -40,7 +40,21 @@
       "schedule": [
         "before 6am"
       ],
-      "timezone": "Asia/Tokyo"
+      "timezone": "Asia/Tokyo",
+      "packageRules": [
+        {
+          "groupName": "ESLint and Prettier",
+          "packageNames": [
+            "eslint",
+            "eslint-config-prettier",
+            "eslint-config-teppeis",
+            "eslint-plugin-eslint-comments",
+            "eslint-plugin-node",
+            "eslint-plugin-prettier",
+            "prettier"
+          ]
+        }
+      ]
     },
     "anytime": {
       "extends": [

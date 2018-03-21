@@ -39,6 +39,7 @@ and add following `renovate.json` to your repo.
 - Make no updates to branches when not scheduled
 - Limit to maximum 20 concurrent Renovate PRs at any time
 - Group monorepo packages together
+- Group ESLint, the plugins, the config and Prettier together
 - Disable major upgrade of `@types/node`
 - Use `renovate/` as prefix for all branch names
 - If semantic commits detected, use semantic commit type `fix` for dependencies and `chore` for all others
@@ -59,7 +60,21 @@ and add following `renovate.json` to your repo.
   "upgradeInRange": true,
   "prHourlyLimit": 0,
   "schedule": ["before 6am"],
-  "timezone": "Asia/Tokyo"
+  "timezone": "Asia/Tokyo",
+  "packageRules": [
+    {
+      "groupName": "ESLint and Prettier",
+      "packageNames": [
+        "eslint",
+        "eslint-config-prettier",
+        "eslint-config-teppeis",
+        "eslint-plugin-eslint-comments",
+        "eslint-plugin-node",
+        "eslint-plugin-prettier",
+        "prettier"
+      ]
+    }
+  ]
 }
 ```
 
