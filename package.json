@@ -31,16 +31,22 @@
         ":separatePatchReleases",
         ":automergePatch",
         ":maintainLockFilesMonthly",
-        ":prConcurrentLimit10",
         ":prNotPending",
         ":preserveSemverRanges",
         ":unpublishSafe"
       ],
       "upgradeInRange": true,
+      "prHourlyLimit": 0,
       "schedule": [
         "before 6am"
       ],
       "timezone": "Asia/Tokyo"
+    },
+    "always": {
+      "extends": [
+        "@teppeis"
+      ],
+      "schedule": []
     }
   }
 }
