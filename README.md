@@ -12,7 +12,7 @@ My [shareable config](https://renovateapp.com/docs/configuration-reference/confi
 
 Enable Renovate in your repo and just `extends` in `renovate.json`.
 
-```json
+```js
 {
   "extends": ["@teppeis"] // or ["@teppeis:anytime"]
 }
