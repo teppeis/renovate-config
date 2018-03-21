@@ -10,19 +10,15 @@ My [shareable config](https://renovateapp.com/docs/configuration-reference/confi
 
 ## Setup
 
-Install
-
-```console
-$ npm install -D @teppeis/renovate-config
-```
-
-and add following `renovate.json` to your repo.
+Enable Renovate in your repo and just specify this in `renovate.json`.
 
 ```json
 {
   "extends": ["@teppeis"]
 }
 ```
+
+You don't have to do `npm i -D @teppeis/renovate-config`. Renovate fetches it from npm registry automatically.
 
 ## Presets
 
