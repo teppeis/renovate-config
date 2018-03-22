@@ -33,6 +33,7 @@
         ":maintainLockFilesWeekly",
         ":prNotPending",
         ":preserveSemverRanges",
+        ":timezone(Asia/Tokyo)",
         ":unpublishSafe"
       ],
       "upgradeInRange": true,
@@ -40,7 +41,6 @@
       "schedule": [
         "before 6am"
       ],
-      "timezone": "Asia/Tokyo",
       "packageRules": [
         {
           "groupName": "ESLint and Prettier",
