@@ -29,35 +29,38 @@ Renovate fetches it from npm registry automatically.
 - Run lock file maintenance (updates) early Monday mornings
 - Separate major, minor and patch releases of dependencies into individual branches/PRs
 - Automerge patch upgrades if they pass tests
+- Disable major upgrade of `@types/node`
 - Upgrade semver ranges to latest version even if latest version satisfies existing range.
-- Upgrade to unstable versions only if the existing version is unstable
 - Wait until branch tests have passed or failed before creating the PR
 - Set a status check to warn when upgrades <  24 hours old might get unpublished
 - Make no updates to branches when not scheduled
-- Limit to maximum 20 concurrent Renovate PRs at any time
+- Limit to maximum 10 concurrent Renovate PRs at any time
+- Apply label `renovate` to PRs
+- Use `build` as semantic commit type for commit messages and PR titles
+- Ignore `node_modules`, `bower_components`, and various test/tests directories
 - Group monorepo packages together
 - Group ESLint, the plugins, the config and Prettier together
-- Disable major upgrade of `@types/node`
-- Use `renovate/` as prefix for all branch names
-- If semantic commits detected, use semantic commit type `fix` for dependencies and `chore` for all others
-- Ignore `node_modules`, `bower_components`, and various test/tests directories
 
 ```json
 {
   "extends": [
-    "config:base",
-    ":noUnscheduledUpdates",
+    ":timezone(Asia/Tokyo)",
+    ":maintainLockFilesWeekly",
     ":separatePatchReleases",
     ":automergePatch",
-    ":maintainLockFilesWeekly",
-    ":prNotPending",
+    "helpers:disableTypesNodeMajor",
     ":preserveSemverRanges",
-    ":unpublishSafe"
+    ":prNotPending",
+    ":unpublishSafe",
+    ":noUnscheduledUpdates",
+    ":prConcurrentLimit10",
+    ":label(renovate)",
+    ":semanticCommitType(build)",
+    ":ignoreModulesAndTests",
+    "group:monorepos"
   ],
   "upgradeInRange": true,
-  "prHourlyLimit": 0,
   "schedule": ["before 6am"],
-  "timezone": "Asia/Tokyo",
   "packageRules": [
     {
       "groupName": "ESLint and Prettier",
