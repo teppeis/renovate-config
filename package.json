@@ -31,6 +31,7 @@
         ":separatePatchReleases",
         ":automergePatch",
         ":maintainLockFilesWeekly",
+        ":label(renovate)",
         ":prNotPending",
         ":preserveSemverRanges",
         ":timezone(Asia/Tokyo)",
