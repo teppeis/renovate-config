@@ -26,19 +26,22 @@
   "renovate-config": {
     "default": {
       "extends": [
-        "config:base",
-        ":noUnscheduledUpdates",
+        ":timezone(Asia/Tokyo)",
+        ":maintainLockFilesWeekly",
         ":separatePatchReleases",
         ":automergePatch",
-        ":maintainLockFilesWeekly",
-        ":label(renovate)",
-        ":prNotPending",
+        "helpers:disableTypesNodeMajor",
         ":preserveSemverRanges",
-        ":timezone(Asia/Tokyo)",
-        ":unpublishSafe"
+        ":prNotPending",
+        ":unpublishSafe",
+        ":noUnscheduledUpdates",
+        ":prConcurrentLimit10",
+        ":label(renovate)",
+        ":semanticCommitType(build)",
+        ":ignoreModulesAndTests",
+        "group:monorepos"
       ],
       "upgradeInRange": true,
-      "prHourlyLimit": 0,
       "schedule": [
         "before 6am"
       ],
