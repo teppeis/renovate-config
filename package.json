@@ -43,7 +43,7 @@
       ],
       "upgradeInRange": true,
       "schedule": [
-        "before 6am"
+        "before 8am"
       ],
       "packageRules": [
         {

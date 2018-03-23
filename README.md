@@ -25,7 +25,7 @@ Renovate fetches it from npm registry automatically.
 
 ### `@teppeis` (default)
 
-- Run Renovate on following schedule: before 6am in Asia/Tokyo
+- Run Renovate on following schedule: before 8am in Asia/Tokyo
 - Run lock file maintenance (updates) early Monday mornings
 - Separate major, minor and patch releases of dependencies into individual branches/PRs
 - Automerge patch upgrades if they pass tests
@@ -60,7 +60,7 @@ Renovate fetches it from npm registry automatically.
     "group:monorepos"
   ],
   "upgradeInRange": true,
-  "schedule": ["before 6am"],
+  "schedule": ["before 8am"],
   "packageRules": [
     {
       "groupName": "ESLint and Prettier",
