@@ -8,7 +8,7 @@
     "test": "node test/validate-config.js"
   },
   "devDependencies": {
-    "renovate": "^11.41.2"
+    "renovate": "^11.45.4"
   },
   "homepage": "https://github.com/teppeis/renovate-config",
   "repository": {
