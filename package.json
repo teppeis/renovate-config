@@ -43,6 +43,9 @@
       ],
       "upgradeInRange": true,
       "schedule": ["before 8am"],
+      "lockFileMaintenance": {
+        "schedule": ["before 8am on Monday"]
+      },
       "packageRules": [
         {
           "groupName": "ESLint and Prettier",
