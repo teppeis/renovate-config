@@ -21,7 +21,10 @@
   "bugs": {
     "url": "https://github.com/teppeis/renovate-config/issues"
   },
-  "keywords": ["npm", "renovate"],
+  "keywords": [
+    "npm",
+    "renovate"
+  ],
   "license": "MIT",
   "renovate-config": {
     "default": {
@@ -42,9 +45,13 @@
         "group:monorepos"
       ],
       "upgradeInRange": true,
-      "schedule": ["before 8am"],
+      "schedule": [
+        "before 8am"
+      ],
       "lockFileMaintenance": {
-        "schedule": ["before 8am on Monday"]
+        "schedule": [
+          "before 8am on Monday"
+        ]
       },
       "packageRules": [
         {
@@ -59,10 +66,21 @@
             "prettier"
           ]
         }
-      ]
+      ],
+      "circleci": {
+        "semanticCommitType": "ci",
+        "semanticCommitScope": "docker",
+        "automerge": true,
+        "automergeType": "branch-push",
+        "schedule": [
+          "before 8am on saturday"
+        ]
+      }
     },
     "anytime": {
-      "extends": ["@teppeis"],
+      "extends": [
+        "@teppeis"
+      ],
       "schedule": []
     }
   }
