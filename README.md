@@ -97,8 +97,16 @@ Renovate fetches it from npm registry automatically.
 
 ```json
 {
-  "extends": ["@teppeis"],
-  "schedule": []
+  "extends": [
+    "@teppeis"
+  ],
+  "schedule": [],
+  "lockFileMaintenance": {
+    "schedule": []
+  },
+  "circleci": {
+    "schedule": []
+  }
 }
 ```
 

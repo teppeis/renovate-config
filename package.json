@@ -81,7 +81,13 @@
       "extends": [
         "@teppeis"
       ],
-      "schedule": []
+      "schedule": [],
+      "lockFileMaintenance": {
+        "schedule": []
+      },
+      "circleci": {
+        "schedule": []
+      }
     }
   }
 }
