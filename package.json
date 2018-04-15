@@ -1,7 +1,7 @@
 {
   "name": "@teppeis/renovate-config",
   "description": "My shareable config for Renovate (renovateapp.com)",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "author": "Teppei Sato <teppeis@gmail.com>",
   "files": [],
   "scripts": {
