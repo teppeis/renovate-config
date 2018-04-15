@@ -40,7 +40,7 @@ Renovate fetches it from npm registry automatically.
 - Ignore `node_modules`, `bower_components`, and various test/tests directories
 - Group monorepo packages together
 - Group ESLint, the plugins, the config and Prettier together
-- Pin and update Docker digest in CircleCI yaml with automerge on Saturday morning
+- Pin and update Docker digest in CircleCI yaml with automerge every weekend
 
 ```json
 {
@@ -84,9 +84,7 @@ Renovate fetches it from npm registry automatically.
     "semanticCommitScope": "docker",
     "auromerge": true,
     "automergeType": "branch-push",
-    "schedule": [
-      "before 8am on saturday"
-    ]
+    "schedule": ["every weekend"]
   }
 }
 ```

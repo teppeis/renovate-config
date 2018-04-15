@@ -73,7 +73,7 @@
         "automerge": true,
         "automergeType": "branch-push",
         "schedule": [
-          "before 8am on saturday"
+          "every weekend"
         ]
       }
     },
