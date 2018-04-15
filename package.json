@@ -49,9 +49,8 @@
         "before 8am"
       ],
       "lockFileMaintenance": {
-        "automerge": true,
         "schedule": [
-          "before 8am on Monday"
+          "on Saturday"
         ]
       },
       "packageRules": [
