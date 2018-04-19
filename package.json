@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "intelli-espower-loader": "^1.0.1",
-    "mocha": "^5.1.0",
+    "mocha": "^5.1.1",
     "power-assert": "^1.5.0",
     "renovate": "^12.4.5"
   },
