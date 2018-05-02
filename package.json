@@ -1,7 +1,7 @@
 {
   "name": "@teppeis/renovate-config",
   "description": "My shareable config for Renovate (renovateapp.com)",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "author": "Teppei Sato <teppeis@gmail.com>",
   "files": [],
   "scripts": {
@@ -78,7 +78,9 @@
         "packageRules": [
           {
             "groupName": "Node Docker digests in CircleCI",
-            "packageNames": ["node"]
+            "packageNames": [
+              "node"
+            ]
           }
         ]
       }
