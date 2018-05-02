@@ -46,11 +46,13 @@
       ],
       "upgradeInRange": true,
       "schedule": [
-        "before 8am"
+        "after 9pm",
+        "before 9am"
       ],
       "lockFileMaintenance": {
         "schedule": [
-          "on Saturday"
+          "every weekend",
+          "before 9am on Monday"
         ]
       },
       "packageRules": [
@@ -72,9 +74,7 @@
         "semanticCommitScope": "docker",
         "automerge": true,
         "automergeType": "branch-push",
-        "schedule": [
-          "every weekend"
-        ]
+        "schedule": []
       }
     },
     "anytime": {
@@ -83,9 +83,6 @@
       ],
       "schedule": [],
       "lockFileMaintenance": {
-        "schedule": []
-      },
-      "circleci": {
         "schedule": []
       }
     }

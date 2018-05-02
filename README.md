@@ -25,8 +25,8 @@ Renovate fetches it from npm registry automatically.
 
 ### `@teppeis` (default)
 
-- Run Renovate on following schedule: before 8am in Asia/Tokyo
-- Run lock file maintenance (updates) on Saturday
+- Run Renovate on following schedule: after 9pm and before 8am in Asia/Tokyo
+- Run lock file maintenance (updates) every weekend
 - Separate major, minor and patch releases of dependencies into individual branches/PRs
 - Automerge patch upgrades if they pass tests
 - Disable major upgrade of `@types/node`
@@ -40,7 +40,7 @@ Renovate fetches it from npm registry automatically.
 - Ignore `node_modules`, `bower_components`, and various test/tests directories
 - Group monorepo packages together
 - Group ESLint, the plugins, the config and Prettier together
-- Pin and update Docker digest in CircleCI yaml with automerge every weekend
+- Pin and update Docker digest in CircleCI yaml with automerge
 
 ```json
 {
@@ -61,9 +61,15 @@ Renovate fetches it from npm registry automatically.
     "group:monorepos"
   ],
   "upgradeInRange": true,
-  "schedule": ["before 8am"],
+  "schedule": [
+    "after 9pm",
+    "before 9am"
+  ],
   "lockFileMaintenance": {
-    "schedule": ["on Saturday"]
+    "schedule": [
+      "every weekend",
+      "before 9am on Monday"
+    ]
   },
   "packageRules": [
     {
@@ -84,7 +90,7 @@ Renovate fetches it from npm registry automatically.
     "semanticCommitScope": "docker",
     "auromerge": true,
     "automergeType": "branch-push",
-    "schedule": ["every weekend"]
+    "schedule": []
   }
 }
 ```
@@ -100,9 +106,6 @@ Renovate fetches it from npm registry automatically.
   ],
   "schedule": [],
   "lockFileMaintenance": {
-    "schedule": []
-  },
-  "circleci": {
     "schedule": []
   }
 }
