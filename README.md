@@ -90,7 +90,13 @@ Renovate fetches it from npm registry automatically.
     "semanticCommitScope": "docker",
     "auromerge": true,
     "automergeType": "branch-push",
-    "schedule": []
+    "schedule": [],
+    "packageRules": [
+      {
+        "groupName": "Node Docker digests in CircleCI",
+        "packageNames": ["node"]
+      }
+    ]
   }
 }
 ```

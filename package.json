@@ -74,7 +74,13 @@
         "semanticCommitScope": "docker",
         "automerge": true,
         "automergeType": "branch-push",
-        "schedule": []
+        "schedule": [],
+        "packageRules": [
+          {
+            "groupName": "Node Docker digests in CircleCI",
+            "packageNames": ["node"]
+          }
+        ]
       }
     },
     "anytime": {
