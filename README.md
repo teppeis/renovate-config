@@ -50,7 +50,6 @@ Renovate fetches it from npm registry automatically.
     ":separatePatchReleases",
     ":automergePatch",
     "helpers:disableTypesNodeMajor",
-    ":preserveSemverRanges",
     ":prNotPending",
     ":unpublishSafe",
     ":noUnscheduledUpdates",

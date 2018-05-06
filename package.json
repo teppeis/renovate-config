@@ -34,7 +34,6 @@
         ":separatePatchReleases",
         ":automergePatch",
         "helpers:disableTypesNodeMajor",
-        ":preserveSemverRanges",
         ":prNotPending",
         ":unpublishSafe",
         ":noUnscheduledUpdates",
