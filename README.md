@@ -25,75 +25,99 @@ Renovate fetches it from npm registry automatically.
 
 ### `@teppeis` (default)
 
-- Run Renovate on following schedule: after 9pm and before 8am in Asia/Tokyo
-- Run lock file maintenance (updates) every weekend
-- Separate major, minor and patch releases of dependencies into individual branches/PRs
-- Automerge patch upgrades if they pass tests
-- Disable major upgrade of `@types/node`
-- Upgrade semver ranges to latest version even if latest version satisfies existing range.
-- Wait until branch tests have passed or failed before creating the PR
-- Set a status check to warn when upgrades <  24 hours old might get unpublished
-- Make no updates to branches when not scheduled
-- Limit to maximum 10 concurrent Renovate PRs at any time
-- Apply label `renovate` to PRs
-- Use `build` as semantic commit type for commit messages and PR titles
+#### General
+
 - Ignore `node_modules`, `bower_components`, and various test/tests directories
+- Apply label `renovate` to PRs
+- Limit to maximum 10 concurrent Renovate PRs at any time
+- Wait until branch tests have passed or failed before creating the PR
+- Use `build(deps):` for devDeps and `fix(deps):` for deps as semantic commit type
+- Use Asia/Tokyo timezone
 - Group monorepo packages together
+
+#### for npm
+
+- Automerge patch upgrades if they pass tests
+- Make no updates to branches when not scheduled
+- Separate major, minor and patch releases of dependencies into individual branches/PRs
+- Set a status check to warn when upgrades <  24 hours old might get unpublished
+- Disable major upgrade of `@types/node`
+- Run following schedule: after 9pm and before 9am
+- Upgrade semver ranges to latest version even if latest version satisfies existing range.
 - Group ESLint, the plugins, the config and Prettier together
-- Pin and update Docker digest in CircleCI yaml with automerge
+
+#### for lock file maintenance
+
+- Run following schedule: every weekend and before before 9am on Monday
+
+#### for Docker digests in CirleCI config.yml
+
+- Run following schedule: on Friday
+- Automerge with push the new commit directly to base branch (no PR)
+- Use `ci(docker):` as semantic commit type
+- Group all versions of Node.js images
 
 ```json
 {
   "extends": [
-    ":timezone(Asia/Tokyo)",
-    ":maintainLockFilesWeekly",
-    ":separatePatchReleases",
-    ":automergePatch",
-    "helpers:disableTypesNodeMajor",
-    ":prNotPending",
-    ":unpublishSafe",
-    ":noUnscheduledUpdates",
-    ":prConcurrentLimit10",
-    ":label(renovate)",
-    ":semanticCommitType(build)",
     ":ignoreModulesAndTests",
+    ":label(renovate)",
+    ":prConcurrentLimit10",
+    ":prNotPending",
+    ":semanticCommitType(build)",
+    ":timezone(Asia/Tokyo)",
     "group:monorepos"
   ],
-  "upgradeInRange": true,
-  "schedule": [
-    "after 9pm",
-    "before 9am"
-  ],
+  "npm": {
+    "extends": [
+      ":automergePatch",
+      ":noUnscheduledUpdates",
+      ":separatePatchReleases",
+      ":unpublishSafe",
+      "helpers:disableTypesNodeMajor"
+    ],
+    "schedule": [
+      "after 9pm",
+      "before 9am"
+    ],
+    "upgradeInRange": true,
+    "packageRules": [
+      {
+        "groupName": "ESLint and Prettier",
+        "packageNames": [
+          "eslint",
+          "eslint-config-prettier",
+          "eslint-config-teppeis",
+          "eslint-plugin-eslint-comments",
+          "eslint-plugin-node",
+          "eslint-plugin-prettier",
+          "prettier"
+        ]
+      }
+    ]
+  },
   "lockFileMaintenance": {
+    "enabled": true,
     "schedule": [
       "every weekend",
       "before 9am on Monday"
     ]
   },
-  "packageRules": [
-    {
-      "groupName": "ESLint and Prettier",
-      "packageNames": [
-        "eslint",
-        "eslint-config-prettier",
-        "eslint-config-teppeis",
-        "eslint-plugin-eslint-comments",
-        "eslint-plugin-node",
-        "eslint-plugin-prettier",
-        "prettier"
-      ]
-    }
-  ],
   "circleci": {
-    "semanticCommitType": "ci",
-    "semanticCommitScope": "docker",
-    "auromerge": true,
+    "enabled": true,
+    "automerge": true,
     "automergeType": "branch-push",
-    "schedule": [],
+    "schedule": [
+      "on Friday"
+    ],
+    "semanticCommitScope": "docker",
+    "semanticCommitType": "ci",
     "packageRules": [
       {
         "groupName": "Node Docker digests in CircleCI",
-        "packageNames": ["node"]
+        "packageNames": [
+          "node"
+        ]
       }
     ]
   }
@@ -109,8 +133,13 @@ Renovate fetches it from npm registry automatically.
   "extends": [
     "@teppeis"
   ],
-  "schedule": [],
+  "npm": {
+    "schedule": []
+  },
   "lockFileMaintenance": {
+    "schedule": []
+  },
+  "circleci": {
     "schedule": []
   }
 }
