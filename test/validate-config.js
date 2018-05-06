@@ -37,3 +37,12 @@ describe('@teppeis/renovate-config', () => {
     });
   }
 });
+
+describe('renovate.json', () => {
+  it('valid', async () => {
+    const config = require('../renovate.json');
+    const {errors, warnings} = await validateConfig(config);
+    assert.deepEqual(errors, []);
+    assert.deepEqual(warnings, []);
+  });
+});
