@@ -1,7 +1,7 @@
 @teppeis/renovate-config
 ====
 
-My [shareable config](https://renovateapp.com/docs/configuration-reference/config-presets) for [Renovate](https://renovateapp.com)
+My [shareable config](https://renovatebot.com/docs/config-presets/) for [Renovate](https://renovatebot.com)
 
 [![npm version][npm-image]][npm-url]
 [![build status][circleci-image]][circleci-url]
@@ -119,10 +119,9 @@ Renovate fetches it from npm registry automatically.
 
 ## References
 
-- [Full Config Presets \- Renovate](https://renovateapp.com/docs/config-presets/config-config)
-- [Default Presets \- Renovate](https://renovateapp.com/docs/config-presets/config-default)
-- [Configuration Options \- Renovate](https://renovateapp.com/docs/configuration-reference/configuration-options)
-- [Shareable Config Presets \- Renovate](https://renovateapp.com/docs/configuration-reference/config-presets)
+- [Renovate Docs](https://renovatebot.com/docs/)
+- [Configuration Options \| Renovate Docs](https://renovatebot.com/docs/configuration-options/)
+- [Default Presets \| Renovate Docs](https://renovatebot.com/docs/presets-default/)
 - [Other shareable configs in GitHub](https://github.com/search?o=desc&q=%22renovate-config%22&s=stars&type=Repositories&utf8=%E2%9C%93)
 
 ## License
