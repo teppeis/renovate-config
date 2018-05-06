@@ -33,7 +33,7 @@ Renovate fetches it from npm registry automatically.
 - Wait until branch tests have passed or failed before creating the PR
 - Use `build(deps):` for devDeps and `fix(deps):` for deps as semantic commit type
 - Use Asia/Tokyo timezone
-- Group monorepo packages together
+- Group [preset monorepo packages](https://renovatebot.com/docs/presets-monorepo/) together
 
 #### for npm
 
