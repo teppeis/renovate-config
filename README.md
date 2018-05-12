@@ -116,6 +116,7 @@ Renovate fetches it from npm registry automatically.
       {
         "groupName": "Node Docker digests in CircleCI",
         "packageNames": [
+          "circleci/node",
           "node"
         ]
       }

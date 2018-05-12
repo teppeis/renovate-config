@@ -85,6 +85,7 @@
           {
             "groupName": "Node Docker digests in CircleCI",
             "packageNames": [
+              "circleci/node",
               "node"
             ]
           }
