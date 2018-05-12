@@ -52,10 +52,10 @@ Renovate fetches it from npm registry automatically.
 
 #### for Docker digests in CirleCI config.yml
 
-- Run following schedule: on Friday
+- Run following schedule: before 9am on Friday
 - Automerge with push the new commit directly to base branch (no PR)
 - Use `ci(docker):` as semantic commit type
-- Group all versions of Node.js images
+- Group all versions of Node.js images (`node` and `circleci/node`)
 
 ```json
 {
@@ -108,7 +108,7 @@ Renovate fetches it from npm registry automatically.
     "automerge": true,
     "automergeType": "branch-push",
     "schedule": [
-      "on Friday"
+      "before 9am on Friday"
     ],
     "semanticCommitScope": "docker",
     "semanticCommitType": "ci",
