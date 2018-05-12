@@ -77,7 +77,7 @@
         "automerge": true,
         "automergeType": "branch-push",
         "schedule": [
-          "on Friday"
+          "before 9am on Friday"
         ],
         "semanticCommitScope": "docker",
         "semanticCommitType": "ci",
