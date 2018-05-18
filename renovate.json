@@ -2,5 +2,11 @@
   "extends": ["@teppeis"],
   "npm": {
     "schedule": []
-  }
+  },
+  "packageRules": [
+    {
+      "packageNames": ["renovate"],
+      "extends": [":unpublishSafeDisabled"]
+    }
+  ]
 }
