@@ -80,7 +80,7 @@ Renovate fetches it from npm registry automatically.
       "after 9pm",
       "before 9am"
     ],
-    "upgradeInRange": true,
+    "rangeStrategy": "bump",
     "packageRules": [
       {
         "groupName": "ESLint and Prettier",

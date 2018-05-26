@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 const {initLogger} = require('renovate/lib/logger');
-const {validateConfig} = require('renovate/lib/config/validation');
+const {migrateAndValidate} = require('renovate/lib/config/migrate-validate');
 
 initLogger();
 
@@ -31,7 +31,7 @@ describe('@teppeis/renovate-config', () => {
 
     it(`"${name}" is valid`, async () => {
       const config = renovateConfig[name];
-      const {errors, warnings} = await validateConfig(config);
+      const {errors, warnings} = await migrateAndValidate({}, config);
       assert.deepEqual(errors, []);
       assert.deepEqual(warnings, []);
     });
@@ -41,7 +41,7 @@ describe('@teppeis/renovate-config', () => {
 describe('renovate.json', () => {
   it('valid', async () => {
     const config = require('../renovate.json');
-    const {errors, warnings} = await validateConfig(config);
+    const {errors, warnings} = await migrateAndValidate({}, config);
     assert.deepEqual(errors, []);
     assert.deepEqual(warnings, []);
   });
