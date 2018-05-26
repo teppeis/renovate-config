@@ -45,10 +45,11 @@ Renovate fetches it from npm registry automatically.
 - Run following schedule: after 9pm and before 9am
 - Upgrade semver ranges to latest version even if latest version satisfies existing range.
 - Group ESLint, the plugins, the config and Prettier together
+- Automerge minor updates of widely used libraries like `mocha` in devDeps
 
 #### for lock file maintenance
 
-- Run following schedule: every weekend and before before 9am on Monday
+- Run following schedule: every weekend and before 9am on Monday
 
 #### for Docker digests in CirleCI config.yml
 
@@ -92,6 +93,23 @@ Renovate fetches it from npm registry automatically.
           "eslint-plugin-node",
           "eslint-plugin-prettier",
           "prettier"
+        ]
+      },
+      {
+        "description": "automerge minor updates of widely used libraries in devDeps",
+        "minor": {
+          "automerge": true
+        },
+        "depTypeList": [
+          "devDependencies"
+        ],
+        "packageNames": [
+          "glob",
+          "mocha",
+          "npm-run-all",
+          "power-assert",
+          "rimraf",
+          "sinon"
         ]
       }
     ]

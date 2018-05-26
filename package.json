@@ -62,6 +62,23 @@
               "eslint-plugin-prettier",
               "prettier"
             ]
+          },
+          {
+            "description": "automerge minor updates of widely used libraries in devDeps",
+            "minor": {
+              "automerge": true
+            },
+            "depTypeList": [
+              "devDependencies"
+            ],
+            "packageNames": [
+              "glob",
+              "mocha",
+              "npm-run-all",
+              "power-assert",
+              "rimraf",
+              "sinon"
+            ]
           }
         ]
       },
