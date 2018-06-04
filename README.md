@@ -121,8 +121,7 @@ Renovate fetches it from npm registry automatically.
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": [
-      "every weekend",
-      "before 9am on Monday"
+      "before 9am on the first day of the month"
     ]
   },
   "circleci": {
