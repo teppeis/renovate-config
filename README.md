@@ -58,6 +58,10 @@ Renovate fetches it from npm registry automatically.
 - Use `ci(docker):` as semantic commit type
 - Group all versions of Node.js images (`node` and `circleci/node`)
 
+#### for `engines` field in `package.json`
+
+- disabled
+
 ```json
 {
   "extends": [
@@ -139,6 +143,9 @@ Renovate fetches it from npm registry automatically.
         ]
       }
     ]
+  },
+  "engines": {
+    "enabled": false
   }
 }
 ```
