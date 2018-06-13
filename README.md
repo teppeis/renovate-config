@@ -115,6 +115,13 @@ Renovate fetches it from npm registry automatically.
           "rimraf",
           "sinon"
         ]
+      },
+      {
+        "description": "disable package.json > engines update",
+        "depTypeList": [
+          "engines"
+        ],
+        "enabled": false
       }
     ]
   },
@@ -142,9 +149,6 @@ Renovate fetches it from npm registry automatically.
         ]
       }
     ]
-  },
-  "engines": {
-    "enabled": false
   }
 }
 ```
