@@ -79,6 +79,13 @@
               "rimraf",
               "sinon"
             ]
+          },
+          {
+            "description": "disable package.json > engines update",
+            "depTypeList": [
+              "engines"
+            ],
+            "enabled": false
           }
         ]
       },
@@ -106,9 +113,6 @@
             ]
           }
         ]
-      },
-      "engines": {
-        "enabled": false
       }
     },
     "anytime": {
