@@ -69,7 +69,6 @@ Renovate fetches it from npm registry automatically.
     ":label(renovate)",
     ":prConcurrentLimit10",
     ":prNotPending",
-    ":semanticPrefixFixDepsChoreOthers",
     ":timezone(Asia/Tokyo)",
     "group:monorepos"
   ],
@@ -77,6 +76,7 @@ Renovate fetches it from npm registry automatically.
     "extends": [
       ":automergePatch",
       ":noUnscheduledUpdates",
+      ":semanticPrefixFixDepsChoreOthers",
       ":separatePatchReleases",
       ":unpublishSafe",
       "helpers:disableTypesNodeMajor"
