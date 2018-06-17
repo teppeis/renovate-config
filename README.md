@@ -31,7 +31,7 @@ Renovate fetches it from npm registry automatically.
 - Apply label `renovate` to PRs
 - Limit to maximum 10 concurrent Renovate PRs at any time
 - Wait until branch tests have passed or failed before creating the PR
-- If semantic commits detected, use semantic commit type fix for dependencies and chore for all others
+- If semantic commits detected, use semantic commit type `fix` for dependencies and `chore` for all others
 - Use Asia/Tokyo timezone
 - Group [preset monorepo packages](https://renovatebot.com/docs/presets-monorepo/) together
 
