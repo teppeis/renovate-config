@@ -33,7 +33,7 @@
         ":label(renovate)",
         ":prConcurrentLimit10",
         ":prNotPending",
-        ":semanticCommitType(build)",
+        ":semanticPrefixFixDepsChoreOthers",
         ":timezone(Asia/Tokyo)",
         "group:monorepos"
       ],
