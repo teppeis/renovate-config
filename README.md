@@ -134,7 +134,7 @@ Renovate fetches it from npm registry automatically.
   "circleci": {
     "enabled": true,
     "automerge": true,
-    "automergeType": "branch-push",
+    "automergeType": "branch",
     "schedule": [
       "before 9am on Friday"
     ],

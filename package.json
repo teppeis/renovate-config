@@ -11,7 +11,7 @@
     "intelli-espower-loader": "^1.0.1",
     "mocha": "^5.2.0",
     "power-assert": "^1.6.0",
-    "renovate": "^12.63.0"
+    "renovate": "^13.1.0"
   },
   "homepage": "https://github.com/teppeis/renovate-config",
   "repository": {
@@ -98,7 +98,7 @@
       "circleci": {
         "enabled": true,
         "automerge": true,
-        "automergeType": "branch-push",
+        "automergeType": "branch",
         "schedule": [
           "before 9am on Friday"
         ],
