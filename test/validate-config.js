@@ -2,9 +2,11 @@
 
 const assert = require('assert');
 const {initLogger} = require('renovate/lib/logger');
+const cache = require('renovate/lib/workers/global/cache');
 const {migrateAndValidate} = require('renovate/lib/config/migrate-validate');
 
 initLogger();
+cache.init();
 
 describe('@teppeis/renovate-config', () => {
   let pkg, renovateConfig;
