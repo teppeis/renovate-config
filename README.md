@@ -1,5 +1,4 @@
-@teppeis/renovate-config
-====
+# @teppeis/renovate-config
 
 My [shareable config](https://renovatebot.com/docs/config-presets/) for [Renovate](https://renovatebot.com)
 
@@ -40,7 +39,7 @@ Renovate fetches it from npm registry automatically.
 - Automerge patch upgrades if they pass tests
 - Make no updates to branches when not scheduled
 - Separate major, minor and patch releases of dependencies into individual branches/PRs
-- Set a status check to warn when upgrades <  24 hours old might get unpublished
+- Set a status check to warn when upgrades < 24 hours old might get unpublished
 - Disable major upgrade of `@types/node`
 - Run following schedule: after 9pm and before 9am
 - Upgrade semver ranges to latest version even if latest version satisfies existing range.
@@ -81,10 +80,7 @@ Renovate fetches it from npm registry automatically.
       ":unpublishSafe",
       "helpers:disableTypesNodeMajor"
     ],
-    "schedule": [
-      "after 9pm",
-      "before 9am"
-    ],
+    "schedule": ["after 9pm", "before 9am"],
     "rangeStrategy": "bump",
     "packageRules": [
       {
@@ -104,49 +100,31 @@ Renovate fetches it from npm registry automatically.
         "minor": {
           "automerge": true
         },
-        "depTypeList": [
-          "devDependencies"
-        ],
-        "packageNames": [
-          "glob",
-          "mocha",
-          "npm-run-all",
-          "power-assert",
-          "rimraf",
-          "sinon"
-        ]
+        "depTypeList": ["devDependencies"],
+        "packageNames": ["glob", "mocha", "npm-run-all", "power-assert", "rimraf", "sinon"]
       },
       {
         "description": "disable package.json > engines update",
-        "depTypeList": [
-          "engines"
-        ],
+        "depTypeList": ["engines"],
         "enabled": false
       }
     ]
   },
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": [
-      "before 9am on the first day of the month"
-    ]
+    "schedule": ["before 9am on the first day of the month"]
   },
   "circleci": {
     "enabled": true,
     "automerge": true,
     "automergeType": "branch",
-    "schedule": [
-      "before 9am on Friday"
-    ],
+    "schedule": ["before 9am on Friday"],
     "semanticCommitScope": "docker",
     "semanticCommitType": "ci",
     "packageRules": [
       {
         "groupName": "Node Docker digests in CircleCI",
-        "packageNames": [
-          "circleci/node",
-          "node"
-        ]
+        "packageNames": ["circleci/node", "node"]
       }
     ]
   }
@@ -155,21 +133,19 @@ Renovate fetches it from npm registry automatically.
 
 ### `@teppeis:anytime`
 
-- Run Renovate ***at any time***
+- Run Renovate **_at any time_**
 
 ```json
 {
-  "extends": [
-    "@teppeis"
-  ],
+  "extends": ["@teppeis"],
   "npm": {
-    "schedule": []
+    "schedule": "at any time"
   },
   "lockFileMaintenance": {
-    "schedule": []
+    "schedule": "at any time"
   },
   "circleci": {
-    "schedule": []
+    "schedule": "at any time"
   }
 }
 ```
