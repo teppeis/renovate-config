@@ -120,13 +120,13 @@
         "@teppeis"
       ],
       "npm": {
-        "schedule": []
+        "schedule": "at any time"
       },
       "lockFileMaintenance": {
-        "schedule": []
+        "schedule": "at any time"
       },
       "circleci": {
-        "schedule": []
+        "schedule": "at any time"
       }
     }
   }
