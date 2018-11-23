@@ -65,12 +65,13 @@
           },
           {
             "description": "automerge minor updates of widely used libraries in devDeps",
-            "minor": {
-              "automerge": true
-            },
+            "updateTypes": [
+              "minor"
+            ],
             "depTypeList": [
               "devDependencies"
             ],
+            "automerge": true,
             "packageNames": [
               "glob",
               "mocha",
