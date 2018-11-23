@@ -97,10 +97,9 @@ Renovate fetches it from npm registry automatically.
       },
       {
         "description": "automerge minor updates of widely used libraries in devDeps",
-        "minor": {
-          "automerge": true
-        },
+        "updateTypes": ["minor"],
         "depTypeList": ["devDependencies"],
+        "automerge": true,
         "packageNames": ["glob", "mocha", "npm-run-all", "power-assert", "rimraf", "sinon"]
       },
       {
