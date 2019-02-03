@@ -55,12 +55,11 @@
             "groupName": "ESLint and Prettier",
             "packageNames": [
               "eslint",
-              "eslint-config-prettier",
-              "eslint-config-teppeis",
-              "eslint-plugin-eslint-comments",
-              "eslint-plugin-node",
-              "eslint-plugin-prettier",
               "prettier"
+            ],
+            "packagePatterns": [
+              "^eslint-config-",
+              "^eslint-plugin-"
             ]
           },
           {
