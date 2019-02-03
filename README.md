@@ -30,7 +30,7 @@ Renovate fetches it from npm registry automatically.
 - Apply label `renovate` to PRs
 - Limit to maximum 10 concurrent Renovate PRs at any time
 - Wait until branch tests have passed or failed before creating the PR
-- If semantic commits detected, use semantic commit type `fix` for dependencies and `chore` for all others
+- If semantic commits detected, use semantic commit type `fix` for deps and peerDeps, `chore` for all others
 - Use Asia/Tokyo timezone
 - Group [preset monorepo packages](https://renovatebot.com/docs/presets-monorepo/) together
 
@@ -75,10 +75,10 @@ Renovate fetches it from npm registry automatically.
     "extends": [
       ":automergePatch",
       ":noUnscheduledUpdates",
-      ":semanticPrefixFixDepsChoreOthers",
       ":separatePatchReleases",
       ":unpublishSafe",
-      "helpers:disableTypesNodeMajor"
+      "helpers:disableTypesNodeMajor",
+      "@teppeis:semanticPrefixFixDepsPeerChoreOthers"
     ],
     "schedule": ["after 9pm", "before 9am"],
     "rangeStrategy": "bump",
@@ -146,6 +146,30 @@ Renovate fetches it from npm registry automatically.
   "circleci": {
     "schedule": "at any time"
   }
+}
+```
+
+### `@teppeis:semanticPrefixFixDepsPeerChoreOthers`
+
+If semantic commits detected, use semantic commit type `fix` for `dependencies` and `peerDependencies`, `chore` for all others
+
+```json
+"semanticPrefixFixDepsPeerChoreOthers": {
+  "packageRules": [
+    {
+      "packagePatterns": [
+        "*"
+      ],
+      "semanticCommitType": "chore"
+    },
+    {
+      "depTypeList": [
+        "dependencies",
+        "peerDependencies"
+      ],
+      "semanticCommitType": "fix"
+    }
+  ]
 }
 ```
 

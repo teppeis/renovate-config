@@ -40,10 +40,10 @@
         "extends": [
           ":automergePatch",
           ":noUnscheduledUpdates",
-          ":semanticPrefixFixDepsChoreOthers",
           ":separatePatchReleases",
           ":unpublishSafe",
-          "helpers:disableTypesNodeMajor"
+          "helpers:disableTypesNodeMajor",
+          "@teppeis:semanticPrefixFixDepsPeerChoreOthers"
         ],
         "schedule": [
           "after 9pm",
@@ -129,6 +129,23 @@
       "circleci": {
         "schedule": "at any time"
       }
+    },
+    "semanticPrefixFixDepsPeerChoreOthers": {
+      "packageRules": [
+        {
+          "packagePatterns": [
+            "*"
+          ],
+          "semanticCommitType": "chore"
+        },
+        {
+          "depTypeList": [
+            "dependencies",
+            "peerDependencies"
+          ],
+          "semanticCommitType": "fix"
+        }
+      ]
     }
   }
 }
