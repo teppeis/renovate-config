@@ -43,7 +43,7 @@ Renovate fetches it from npm registry automatically.
 - Disable major upgrade of `@types/node`
 - Run following schedule: after 9pm and before 9am
 - Upgrade semver ranges to latest version even if latest version satisfies existing range.
-- Group ESLint, the plugins, the config and Prettier together
+- Group ESLint, ESLint configs, ESLint plugins and Prettier together
 - Automerge minor updates of widely used libraries like `mocha` in devDeps
 
 #### for lock file maintenance
@@ -85,15 +85,8 @@ Renovate fetches it from npm registry automatically.
     "packageRules": [
       {
         "groupName": "ESLint and Prettier",
-        "packageNames": [
-          "eslint",
-          "eslint-config-prettier",
-          "eslint-config-teppeis",
-          "eslint-plugin-eslint-comments",
-          "eslint-plugin-node",
-          "eslint-plugin-prettier",
-          "prettier"
-        ]
+        "packageNames": ["eslint", "prettier"],
+        "packagePatterns": ["^eslint-config-", "^eslint-plugin-"]
       },
       {
         "description": "automerge minor updates of widely used libraries in devDeps",
