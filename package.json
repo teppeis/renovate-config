@@ -92,7 +92,7 @@
       "lockFileMaintenance": {
         "enabled": true,
         "schedule": [
-          "before 9am on the first day of the month"
+          "before 5am on the first day of the month"
         ]
       },
       "circleci": {
