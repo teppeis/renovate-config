@@ -48,7 +48,7 @@ Renovate fetches it from npm registry automatically.
 
 #### for lock file maintenance
 
-- Run following schedule: every weekend and before 9am on Monday
+- Run following schedule: before 5am on the first day of the month
 
 #### for Docker digests in CirleCI config.yml
 
