@@ -40,6 +40,7 @@ Renovate fetches it from npm registry automatically.
 - Make no updates to branches when not scheduled
 - Separate major, minor and patch releases of dependencies into individual branches/PRs
 - Set a status check to warn when upgrades < 24 hours old might get unpublished
+- Run `npm dedupe` after package-lock.json updates
 - Disable major upgrade of `@types/node`
 - Run following schedule: after 9pm and before 9am
 - Upgrade semver ranges to latest version even if latest version satisfies existing range.
@@ -82,6 +83,15 @@ Renovate fetches it from npm registry automatically.
     ],
     "schedule": ["after 9pm", "before 9am"],
     "rangeStrategy": "bump",
+    "postUpdateOptions": [
+      "npmDedupe"
+    ],
+    "lockFileMaintenance": {
+      "enabled": true,
+      "schedule": [
+        "before 5am on the first day of the month"
+      ]
+    },
     "packageRules": [
       {
         "groupName": "ESLint and Prettier",
@@ -101,10 +111,6 @@ Renovate fetches it from npm registry automatically.
         "enabled": false
       }
     ]
-  },
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": ["before 9am on the first day of the month"]
   },
   "circleci": {
     "enabled": true,

@@ -50,6 +50,15 @@
           "before 9am"
         ],
         "rangeStrategy": "bump",
+        "postUpdateOptions": [
+          "npmDedupe"
+        ],
+        "lockFileMaintenance": {
+          "enabled": true,
+          "schedule": [
+            "before 5am on the first day of the month"
+          ]
+        },
         "packageRules": [
           {
             "groupName": "ESLint and Prettier",
@@ -87,12 +96,6 @@
             ],
             "enabled": false
           }
-        ]
-      },
-      "lockFileMaintenance": {
-        "enabled": true,
-        "schedule": [
-          "before 5am on the first day of the month"
         ]
       },
       "circleci": {
