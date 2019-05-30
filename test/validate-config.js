@@ -4,9 +4,10 @@ const assert = require('assert');
 const {initLogger} = require('renovate/lib/logger');
 const cache = require('renovate/lib/workers/global/cache');
 const {migrateAndValidate} = require('renovate/lib/config/migrate-validate');
+const tempy = require('tempy');
 
 initLogger();
-cache.init();
+cache.init(tempy.directory());
 
 describe('@teppeis/renovate-config', () => {
   let pkg, renovateConfig;
