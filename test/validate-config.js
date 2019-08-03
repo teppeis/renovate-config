@@ -1,13 +1,6 @@
 'use strict';
 
 const assert = require('assert');
-const {initLogger} = require('renovate/dist/logger');
-const cache = require('renovate/dist/workers/global/cache');
-const {migrateAndValidate} = require('renovate/dist/config/migrate-validate');
-const tempy = require('tempy');
-
-initLogger();
-cache.init(tempy.directory());
 
 describe('@teppeis/renovate-config', () => {
   let pkg, renovateConfig;
@@ -31,21 +24,5 @@ describe('@teppeis/renovate-config', () => {
     it(`"renovate-config" has "${name}"`, async () => {
       assert(renovateConfig[name]);
     });
-
-    it(`"${name}" is valid`, async () => {
-      const config = renovateConfig[name];
-      const {errors, warnings} = await migrateAndValidate({}, config);
-      assert.deepEqual(errors, []);
-      assert.deepEqual(warnings, []);
-    });
   }
-});
-
-describe('renovate.json', () => {
-  it('valid', async () => {
-    const config = require('../renovate.json');
-    const {errors, warnings} = await migrateAndValidate({}, config);
-    assert.deepEqual(errors, []);
-    assert.deepEqual(warnings, []);
-  });
 });
