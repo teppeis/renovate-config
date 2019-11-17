@@ -53,9 +53,10 @@ Renovate fetches it from npm registry automatically.
 
 #### for Docker digests in CirleCI config.yml
 
-- Run following schedule: before 9am on Friday
-- Automerge with push the new commit directly to base branch (no PR)
+- Pin docker images with sha256 digest
+- Automerge with push the new commit directly to base branch (w/o PR)
 - Use `ci(docker):` as semantic commit type
+- Run following schedule: before 9am on Friday
 - Group all versions of Node.js images (`node` and `circleci/node`)
 
 #### for `engines` field in `package.json`
@@ -119,6 +120,7 @@ Renovate fetches it from npm registry automatically.
     "schedule": ["before 9am on Friday"],
     "semanticCommitScope": "docker",
     "semanticCommitType": "ci",
+    "pinDigests": true,
     "packageRules": [
       {
         "groupName": "Node Docker digests in CircleCI",
