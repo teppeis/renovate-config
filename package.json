@@ -106,6 +106,7 @@
         "schedule": [
           "before 9am on Friday"
         ],
+        "pinDigests": true,
         "semanticCommitScope": "docker",
         "semanticCommitType": "ci",
         "packageRules": [
