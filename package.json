@@ -11,7 +11,7 @@
     "intelli-espower-loader": "^1.0.1",
     "mocha": "^6.2.3",
     "power-assert": "^1.6.1",
-    "renovate": "^19.112.2",
+    "renovate": "^19.239.11",
     "tempy": "^0.3.0"
   },
   "homepage": "https://github.com/teppeis/renovate-config",
