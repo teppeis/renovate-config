@@ -84,31 +84,34 @@ Renovate fetches it from npm registry automatically.
     ],
     "schedule": ["after 9pm", "before 9am"],
     "rangeStrategy": "bump",
-    "postUpdateOptions": [
-      "npmDedupe"
-    ],
+    "postUpdateOptions": ["npmDedupe"],
     "lockFileMaintenance": {
       "enabled": true,
-      "schedule": [
-        "before 3am on the first day of the month"
-      ]
+      "schedule": ["before 3am on the first day of the month"]
     },
     "packageRules": [
       {
         "groupName": "ESLint and Prettier",
-        "packageNames": ["eslint", "prettier"],
-        "packagePatterns": ["^eslint-config-", "^eslint-plugin-"]
+        "matchPackageNames": ["eslint", "prettier"],
+        "matchPackagePatterns": ["^eslint-config-", "^eslint-plugin-"]
       },
       {
         "description": "automerge minor updates of widely used libraries in devDeps",
-        "updateTypes": ["minor"],
-        "depTypeList": ["devDependencies"],
+        "matchUpdateTypes": ["minor"],
+        "matchDepTypes": ["devDependencies"],
         "automerge": true,
-        "packageNames": ["glob", "mocha", "npm-run-all", "power-assert", "rimraf", "sinon"]
+        "matchPackageNames": [
+          "glob",
+          "mocha",
+          "npm-run-all",
+          "power-assert",
+          "rimraf",
+          "sinon"
+        ]
       },
       {
         "description": "disable package.json > engines update",
-        "depTypeList": ["engines"],
+        "matchDepTypes": ["engines"],
         "enabled": false
       }
     ]
@@ -124,7 +127,7 @@ Renovate fetches it from npm registry automatically.
     "packageRules": [
       {
         "groupName": "Node Docker digests in CircleCI",
-        "packageNames": ["circleci/node", "node"]
+        "matchPackageNames": ["circleci/node", "node"]
       }
     ]
   }
@@ -158,13 +161,13 @@ If semantic commits detected, use semantic commit type `fix` for `dependencies` 
 "semanticPrefixFixDepsPeerChoreOthers": {
   "packageRules": [
     {
-      "packagePatterns": [
+      "matchPackagePatterns": [
         "*"
       ],
       "semanticCommitType": "chore"
     },
     {
-      "depTypeList": [
+      "matchDepTypes": [
         "dependencies",
         "peerDependencies"
       ],

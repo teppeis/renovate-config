@@ -5,8 +5,10 @@
   },
   "packageRules": [
     {
-      "packageNames": ["renovate"],
-      "extends": [":unpublishSafeDisabled"]
+      "matchPackageNames": ["renovate"],
+      "npm": {
+        "stabilityDays": 0
+      }
     }
   ]
 }

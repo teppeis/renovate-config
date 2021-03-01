@@ -11,7 +11,7 @@
     "intelli-espower-loader": "^1.0.1",
     "mocha": "^6.2.3",
     "power-assert": "^1.6.1",
-    "renovate": "^23.100.5"
+    "renovate": "^24.68.1"
   },
   "homepage": "https://github.com/teppeis/renovate-config",
   "repository": {
@@ -41,7 +41,7 @@
           ":automergePatch",
           ":noUnscheduledUpdates",
           ":separatePatchReleases",
-          ":unpublishSafe",
+          "npm:unpublishSafe",
           "helpers:disableTypesNodeMajor",
           "@teppeis:semanticPrefixFixDepsPeerChoreOthers"
         ],
@@ -62,25 +62,25 @@
         "packageRules": [
           {
             "groupName": "ESLint and Prettier",
-            "packageNames": [
+            "matchPackageNames": [
               "eslint",
               "prettier"
             ],
-            "packagePatterns": [
+            "matchPackagePatterns": [
               "^eslint-config-",
               "^eslint-plugin-"
             ]
           },
           {
             "description": "automerge minor updates of widely used libraries in devDeps",
-            "updateTypes": [
+            "matchUpdateTypes": [
               "minor"
             ],
-            "depTypeList": [
+            "matchDepTypes": [
               "devDependencies"
             ],
             "automerge": true,
-            "packageNames": [
+            "matchPackageNames": [
               "glob",
               "mocha",
               "npm-run-all",
@@ -91,7 +91,7 @@
           },
           {
             "description": "disable package.json > engines update",
-            "depTypeList": [
+            "matchDepTypes": [
               "engines"
             ],
             "enabled": false
@@ -111,7 +111,7 @@
         "packageRules": [
           {
             "groupName": "Node Docker digests in CircleCI",
-            "packageNames": [
+            "matchPackageNames": [
               "circleci/node",
               "node"
             ]
@@ -136,13 +136,13 @@
     "semanticPrefixFixDepsPeerChoreOthers": {
       "packageRules": [
         {
-          "packagePatterns": [
+          "matchPackagePatterns": [
             "*"
           ],
           "semanticCommitType": "chore"
         },
         {
-          "depTypeList": [
+          "matchDepTypes": [
             "dependencies",
             "peerDependencies"
           ],
