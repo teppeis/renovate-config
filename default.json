@@ -1,0 +1,68 @@
+{
+  "extends": [
+    ":ignoreModulesAndTests",
+    ":label(renovate)",
+    ":prConcurrentLimit10",
+    ":prNotPending",
+    ":timezone(Asia/Tokyo)",
+    "group:monorepos"
+  ],
+  "npm": {
+    "extends": [
+      ":automergePatch",
+      ":noUnscheduledUpdates",
+      ":separatePatchReleases",
+      "npm:unpublishSafe",
+      "helpers:disableTypesNodeMajor",
+      "local>teppeis/renovate-config:semanticPrefixFixDepsPeerChoreOthers"
+    ],
+    "schedule": ["after 9pm", "before 9am"],
+    "rangeStrategy": "bump",
+    "postUpdateOptions": ["npmDedupe"],
+    "lockFileMaintenance": {
+      "enabled": true,
+      "schedule": ["before 3am on the first day of the month"]
+    },
+    "packageRules": [
+      {
+        "groupName": "ESLint and Prettier",
+        "matchPackageNames": ["eslint", "prettier"],
+        "matchPackagePatterns": ["^eslint-config-", "^eslint-plugin-"]
+      },
+      {
+        "description": "automerge minor updates of widely used libraries in devDeps",
+        "matchUpdateTypes": ["minor"],
+        "matchDepTypes": ["devDependencies"],
+        "automerge": true,
+        "matchPackageNames": [
+          "glob",
+          "mocha",
+          "npm-run-all",
+          "power-assert",
+          "rimraf",
+          "sinon"
+        ]
+      },
+      {
+        "description": "disable package.json > engines update",
+        "matchDepTypes": ["engines"],
+        "enabled": false
+      }
+    ]
+  },
+  "circleci": {
+    "enabled": true,
+    "automerge": true,
+    "automergeType": "branch",
+    "schedule": ["before 9am on Friday"],
+    "pinDigests": true,
+    "semanticCommitScope": "docker",
+    "semanticCommitType": "ci",
+    "packageRules": [
+      {
+        "groupName": "Node Docker digests in CircleCI",
+        "matchPackageNames": ["circleci/node", "node"]
+      }
+    ]
+  }
+}

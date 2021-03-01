@@ -1,0 +1,12 @@
+{
+  "extends": ["local>teppeis/renovate-config"],
+  "npm": {
+    "schedule": "at any time"
+  },
+  "lockFileMaintenance": {
+    "schedule": "at any time"
+  },
+  "circleci": {
+    "schedule": "at any time"
+  }
+}
