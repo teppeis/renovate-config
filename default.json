@@ -14,7 +14,7 @@
       ":separatePatchReleases",
       "npm:unpublishSafe",
       "helpers:disableTypesNodeMajor",
-      "@teppeis:semanticPrefixFixDepsPeerChoreOthers"
+      "local>teppeis/renovate-config:semanticPrefixFixDepsPeerChoreOthers"
     ],
     "schedule": ["after 9pm", "before 9am"],
     "rangeStrategy": "bump",

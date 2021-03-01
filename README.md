@@ -13,16 +13,16 @@ Enable Renovate in your repo and just `extends` in `renovate.json`.
 
 ```js
 {
-  "extends": ["@teppeis"] // or ["@teppeis:anytime"]
+  "extends": ["github>teppeis/renovate-config"] // or ["github>teppeis/renovate-config:anytime"]
 }
 ```
 
 Note: You don't have to do `npm i -D @teppeis/renovate-config`.
-Renovate fetches it from npm registry automatically.
+Renovate fetches it from this GitHub repo automatically.
 
 ## Presets
 
-### `@teppeis` (default)
+### `github>teppeis/renovate-config` (`default`)
 
 #### General
 
@@ -80,7 +80,7 @@ Renovate fetches it from npm registry automatically.
       ":separatePatchReleases",
       "npm:unpublishSafe",
       "helpers:disableTypesNodeMajor",
-      "@teppeis:semanticPrefixFixDepsPeerChoreOthers"
+      "local>teppeis/renovate-config:semanticPrefixFixDepsPeerChoreOthers"
     ],
     "schedule": ["after 9pm", "before 9am"],
     "rangeStrategy": "bump",
@@ -134,13 +134,13 @@ Renovate fetches it from npm registry automatically.
 }
 ```
 
-### `@teppeis:anytime`
+### `github>teppeis/renovate-config:anytime`
 
 - Run Renovate **_at any time_**
 
 ```json
 {
-  "extends": ["@teppeis"],
+  "extends": ["local>teppeis/renovate-config"],
   "npm": {
     "schedule": "at any time"
   },
@@ -153,7 +153,7 @@ Renovate fetches it from npm registry automatically.
 }
 ```
 
-### `@teppeis:semanticPrefixFixDepsPeerChoreOthers`
+### `github>teppeis/renovate-config:semanticPrefixFixDepsPeerChoreOthers`
 
 If semantic commits detected, use semantic commit type `fix` for `dependencies` and `peerDependencies`, `chore` for all others
 

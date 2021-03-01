@@ -1,5 +1,5 @@
 {
-  "extends": ["@teppeis"],
+  "extends": ["local>teppeis/renovate-config"],
   "npm": {
     "schedule": "at any time"
   },
