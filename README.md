@@ -78,7 +78,7 @@ Renovate fetches it from npm registry automatically.
       ":automergePatch",
       ":noUnscheduledUpdates",
       ":separatePatchReleases",
-      ":unpublishSafe",
+      "npm:unpublishSafe",
       "helpers:disableTypesNodeMajor",
       "@teppeis:semanticPrefixFixDepsPeerChoreOthers"
     ],
