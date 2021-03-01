@@ -41,7 +41,7 @@
           ":automergePatch",
           ":noUnscheduledUpdates",
           ":separatePatchReleases",
-          ":unpublishSafe",
+          "npm:unpublishSafe",
           "helpers:disableTypesNodeMajor",
           "@teppeis:semanticPrefixFixDepsPeerChoreOthers"
         ],
