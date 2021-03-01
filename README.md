@@ -3,7 +3,7 @@
 My [shareable config](https://renovatebot.com/docs/config-presets/) for [Renovate](https://renovatebot.com)
 
 [![npm version][npm-image]][npm-url]
-[![build status][circleci-image]][circleci-url]
+[![build status][ci-image]][ci-url]
 [![dependency status][deps-image]][deps-url]
 ![License][license]
 
@@ -192,10 +192,8 @@ MIT License: Teppei Sato &lt;teppeis@gmail.com&gt;
 [npm-image]: https://img.shields.io/npm/v/@teppeis/renovate-config.svg
 [npm-url]: https://npmjs.org/package/@teppeis/renovate-config
 [npm-downloads-image]: https://img.shields.io/npm/dm/@teppeis/renovate-config.svg
-[travis-image]: https://img.shields.io/travis/teppeis/renovate-config/master.svg
-[travis-url]: https://travis-ci.org/teppeis/renovate-config
-[circleci-image]: https://circleci.com/gh/teppeis/renovate-config.svg?style=shield
-[circleci-url]: https://circleci.com/gh/teppeis/renovate-config
+[ci-image]: https://github.com/teppeis/renovate-config/workflows/ci/badge.svg
+[ci-url]: https://github.com/teppeis/renovate-config/actions?query=workflow%3Aci
 [deps-image]: https://img.shields.io/david/teppeis/renovate-config.svg
 [deps-url]: https://david-dm.org/teppeis/renovate-config
 [node-version]: https://img.shields.io/badge/Node.js%20support-v6,v8,v9-brightgreen.svg
