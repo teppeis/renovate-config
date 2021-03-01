@@ -1,15 +1,13 @@
-'use strict';
+"use strict";
 
-const assert = require('assert');
+const assert = require("assert");
 
-describe('@teppeis/renovate-config', () => {
-  let pkg, renovateConfig;
+describe("@teppeis/renovate-config", () => {
+  let renovateConfig;
   beforeEach(() => {
-    pkg = require('../package.json');
-    renovateConfig = pkg['renovate-config'];
+    renovateConfig = require("../default.json");
   });
   afterEach(() => {
-    pkg = null;
     renovateConfig = null;
   });
 
@@ -17,8 +15,8 @@ describe('@teppeis/renovate-config', () => {
     assert(renovateConfig);
   });
 
-  assertConfig('default');
-  assertConfig('anytime');
+  assertConfig("default");
+  assertConfig("anytime");
 
   function assertConfig(name) {
     it(`"renovate-config" has "${name}"`, async () => {
