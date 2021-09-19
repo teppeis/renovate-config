@@ -14,6 +14,8 @@
       ":separatePatchReleases",
       "npm:unpublishSafe",
       "helpers:disableTypesNodeMajor",
+      "group:jestPlusTSJest",
+      "packages:eslint",
       "local>teppeis/renovate-config:semanticPrefixFixDepsPeerChoreOthers"
     ],
     "schedule": ["after 9pm", "before 9am"],
@@ -25,9 +27,8 @@
     },
     "packageRules": [
       {
-        "groupName": "ESLint and Prettier",
-        "matchPackageNames": ["eslint", "prettier"],
-        "matchPackagePatterns": ["^eslint-config-", "^eslint-plugin-"]
+        "groupName": "jest monorepo",
+        "matchPackageNames": ["@types/jest"]
       },
       {
         "description": "automerge minor updates of widely used libraries in devDeps",
