@@ -6,9 +6,8 @@
   "packageRules": [
     {
       "matchPackageNames": ["renovate"],
-      "npm": {
-        "stabilityDays": 0
-      }
+      "matchManagers": ["npm"],
+      "stabilityDays": 0
     }
   ]
 }
