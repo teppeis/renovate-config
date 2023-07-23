@@ -39,13 +39,12 @@ Renovate fetches it from this GitHub repo automatically.
 - Automerge patch upgrades if they pass tests
 - Make no updates to branches when not scheduled
 - Separate major, minor and patch releases of dependencies into individual branches/PRs
-- Set a status check to warn when upgrades < 24 hours old might get unpublished
+- Wait until the npm package is three days old before raising the update for stability
 - Run `npm dedupe` after package-lock.json updates
 - Disable major upgrade of `@types/node`
 - Run following schedule: after 9pm and before 9am
 - Upgrade semver ranges to latest version even if latest version satisfies existing range.
-- Group ESLint, ESLint configs, ESLint plugins and Prettier together
-- Automerge minor updates of widely used libraries like `mocha` in devDeps
+- Automerge minor updates in devDeps
 
 #### for lock file maintenance
 
@@ -91,28 +90,20 @@ Renovate fetches it from this GitHub repo automatically.
     },
     "packageRules": [
       {
-        "groupName": "ESLint and Prettier",
-        "matchPackageNames": ["eslint", "prettier"],
-        "matchPackagePatterns": ["^eslint-config-", "^eslint-plugin-"]
-      },
-      {
-        "description": "automerge minor updates of widely used libraries in devDeps",
-        "matchUpdateTypes": ["minor"],
-        "matchDepTypes": ["devDependencies"],
+        "description": "automerge minor updates in devDeps",
         "automerge": true,
-        "matchPackageNames": [
-          "glob",
-          "mocha",
-          "npm-run-all",
-          "power-assert",
-          "rimraf",
-          "sinon"
-        ]
+        "matchUpdateTypes": ["minor"],
+        "matchDepTypes": ["devDependencies"]
       },
       {
         "description": "disable package.json > engines update",
         "matchDepTypes": ["engines"],
         "enabled": false
+      },
+      {
+        "schedule": "at any time",
+        "minimumReleaseAge": "0",
+        "matchPackageNames": ["eslint-config-teppeis"]
       }
     ]
   },
