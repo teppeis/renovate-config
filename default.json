@@ -27,27 +27,20 @@
     },
     "packageRules": [
       {
-        "groupName": "jest monorepo",
-        "matchPackageNames": ["@types/jest"]
-      },
-      {
-        "description": "automerge minor updates of widely used libraries in devDeps",
-        "matchUpdateTypes": ["minor"],
-        "matchDepTypes": ["devDependencies"],
+        "description": "automerge minor updates in devDeps",
         "automerge": true,
-        "matchPackageNames": [
-          "glob",
-          "mocha",
-          "npm-run-all",
-          "power-assert",
-          "rimraf",
-          "sinon"
-        ]
+        "matchUpdateTypes": ["minor"],
+        "matchDepTypes": ["devDependencies"]
       },
       {
         "description": "disable package.json > engines update",
         "matchDepTypes": ["engines"],
         "enabled": false
+      },
+      {
+        "schedule": "at any time",
+        "minimumReleaseAge": "0",
+        "matchPackageNames": ["eslint-config-teppeis"]
       }
     ]
   },
