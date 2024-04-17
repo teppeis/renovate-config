@@ -7,7 +7,7 @@
     {
       "matchPackageNames": ["renovate"],
       "matchManagers": ["npm"],
-      "stabilityDays": 0
+      "minimumReleaseAge": null
     }
   ]
 }
