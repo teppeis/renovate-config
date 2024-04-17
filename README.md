@@ -90,13 +90,13 @@ Renovate fetches it from this GitHub repo automatically.
     },
     "packageRules": [
       {
-        "description": "automerge minor updates in devDeps",
+        "description": ["automerge minor updates in devDeps"],
         "automerge": true,
         "matchUpdateTypes": ["minor"],
         "matchDepTypes": ["devDependencies"]
       },
       {
-        "description": "disable package.json > engines update",
+        "description": ["disable package.json > engines update"],
         "matchDepTypes": ["engines"],
         "enabled": false
       },
