@@ -41,6 +41,15 @@
         "schedule": "at any time",
         "minimumReleaseAge": "0",
         "matchPackageNames": ["eslint-config-teppeis"]
+      },
+      {
+        "groupName": "ESLint group",
+        "matchPackageNames": [
+          "eslint",
+          "@eslint/js",
+          "@types/eslint",
+          "@types/eslint__js"
+        ]
       }
     ]
   },
